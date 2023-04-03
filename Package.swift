@@ -99,9 +99,9 @@ let package = Package(
         .binaryTarget(name: "BlueStackDFPAdapter", path: "BlueStackDFPAdapter.xcframework"),
         .binaryTarget(name: "GoogleMobileAds", path: "Dependencies/GoogleMobileAds.xcframework"),
         //for dfp dependencies
-        .binaryTarget(name: "BSFBLPromises", path: "Dependencies/FBLPromises.xcframework"),
-        .binaryTarget(name: "BSGoogleUtilities", path: "Dependencies/GoogleUtilities.xcframework"),
-        .binaryTarget(name: "BSnanopb", path: "Dependencies/nanopb.xcframework"),
+        .binaryTarget(name: "BSFBLPromises", path: "Dependencies/BSFBLPromises.xcframework"),
+        .binaryTarget(name: "BSGoogleUtilities", path: "Dependencies/BSGoogleUtilities.xcframework"),
+        .binaryTarget(name: "BSnanopb", path: "Dependencies/BSnanopb.xcframework"),
         //fb
         .binaryTarget(name: "BlueStackFacebookAdapter", path: "BlueStackFacebookAdapter.xcframework"),
         .binaryTarget(name: "FBAudienceNetwork", path: "Dependencies/FBAudienceNetwork.xcframework"),

@@ -42,12 +42,12 @@ let package = Package(
                     //ImproveDigital
                     .target(name: "BlueStackImproveAdapter", condition: .when(platforms: [.iOS])),
                     .target(name: "ImproveDigital", condition: .when(platforms: [.iOS])),
-                    // .target(name: "GoogleInteractiveMediaAds",condition: .when(platforms: [.iOS])),
+                    .target(name: "GoogleInteractiveMediaAds",condition: .when(platforms: [.iOS])),
                     // //dfp
-                    //     .target(
-                    //         name: "BlueStackDFPAdapterWrapper",
-                    //         condition: .when(platforms: [.iOS])
-                    //     ),
+                        .target(
+                            name: "BlueStackDFPAdapterWrapper",
+                            condition: .when(platforms: [.iOS])
+                        ),
                     //ogury
                     .target(name: "BlueStackOguryAdapter", condition: .when(platforms: [.iOS])),
                     .target(name: "OMSDK_Ogury", condition: .when(platforms: [.iOS])),
@@ -74,15 +74,15 @@ let package = Package(
                     .linkedLibrary("sqlite3")
                 ]
                ),
-        // .target(name: "BlueStackDFPAdapterWrapper",
-        //         dependencies: [
-        //             .target(name: "FBLPromises", condition: .when(platforms: [.iOS])),
-        //             .target(name: "GoogleUtilities", condition: .when(platforms: [.iOS])),
-        //             .target(name: "nanopb", condition: .when(platforms: [.iOS])),
-        //              .target(name: "BlueStackDFPAdapter", condition: .when(platforms: [.iOS])),
-        //         ],
-        //         path: "BlueStackDFPAdapterWrapper"
-        //        ),
+        .target(name: "BlueStackDFPAdapterWrapper",
+                dependencies: [
+                    .target(name: "BSFBLPromises", condition: .when(platforms: [.iOS])),
+                    .target(name: "BSGoogleUtilities", condition: .when(platforms: [.iOS])),
+                    .target(name: "BSnanopb", condition: .when(platforms: [.iOS])),
+                    .target(name: "BlueStackDFPAdapter", condition: .when(platforms: [.iOS])),
+                ],
+                path: "BlueStackDFPAdapterWrapper"
+        ),
         //core
         .binaryTarget(name: "BlueStackSDK", path: "BlueStackSDK.xcframework"),
         .binaryTarget(name: "OMSDK_Madvertise", path: "OMSDK_Madvertise.xcframework"),
@@ -99,9 +99,9 @@ let package = Package(
         .binaryTarget(name: "BlueStackDFPAdapter", path: "BlueStackDFPAdapter.xcframework"),
         .binaryTarget(name: "GoogleMobileAds", path: "Dependencies/GoogleMobileAds.xcframework"),
         //for dfp dependencies
-        .binaryTarget(name: "FBLPromises", path: "Dependencies/FBLPromises.xcframework"),
-        .binaryTarget(name: "GoogleUtilities", path: "Dependencies/GoogleUtilities.xcframework"),
-        .binaryTarget(name: "nanopb", path: "Dependencies/nanopb.xcframework"),
+        .binaryTarget(name: "BSFBLPromises", path: "Dependencies/FBLPromises.xcframework"),
+        .binaryTarget(name: "BSGoogleUtilities", path: "Dependencies/GoogleUtilities.xcframework"),
+        .binaryTarget(name: "BSnanopb", path: "Dependencies/nanopb.xcframework"),
         //fb
         .binaryTarget(name: "BlueStackFacebookAdapter", path: "BlueStackFacebookAdapter.xcframework"),
         .binaryTarget(name: "FBAudienceNetwork", path: "Dependencies/FBAudienceNetwork.xcframework"),
